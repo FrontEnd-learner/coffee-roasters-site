@@ -8,6 +8,7 @@
     --accent-color-light-brown-80: rgb(201, 155, 103, 0.8);
     --accent-color-light-brown-60: rgba(201, 155, 103, 0.6);
     --light-brown: #f3d7b7;
+    --light-green-bg: #f8f8f2;
     --outline-color:var(--accent-color-green);
 }
 
@@ -217,6 +218,70 @@ img{
     height: 696px;
 }
 
+/* MAIN CONTENT */
+.main-content{
+    flex-grow: 1;
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+/* INDEX-COLLECTION */
+.index-collection-inner{
+    padding: 50px 145px;
+    background-color: var(--light-green-bg);
+    background-image: url(../img/index-collection-bg.jpg);
+}
+.index-collection-heading {
+    margin-bottom: 80px;
+    text-align: center;
+    color: #000;
+    font-size: 50px;
+    line-height: 60px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.index-collection-item {
+    display: flex;
+    align-items: center;
+}
+.index-collection-item:nth-child(even){  /* juftlarida*/
+    flex-direction: row-reverse;
+}
+.index-collection-img {
+    display: inline-block;
+    flex-shrink: 0;    /* kichrayib ketmaslik uchun*/
+    width: 450px;
+    height: 375px;
+    object-fit: cover;
+}
+.index-collection-info {
+    flex-grow: 1;  /* qolgan joyini qoplab olish uchun*/
+}
+.index-collection-title {
+    margin-bottom: 10px;
+    color: var(--text-color);
+    font-size: 38px;
+    line-height: normal;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.index-collection-text {
+    color: var(--text-color);
+    font-size: 22px;
+    line-height: 34px;
+    font-weight: 400;
+}
+.index-collection-text:not(:last-child){
+    margin-bottom: 10px;
+}
+.index-collection-item:nth-child(odd) .index-collection-info{
+    padding-left: 117px;
+}
+
+.index-collection-item:nth-child(even) .index-collection-info{
+    padding-right: 117px;
+}
+
 
 
 /* RETINA */
@@ -230,6 +295,9 @@ only screen and (                min-resolution: 2dppx) {
 
     .site-header-hero-wrapper{
         background-image: url(../img/header-bg@2x.jpg);
+    }
+    .index-collection {
+        background-image: url(../img/index-collection-bg@2x.jpg);
     }
 
 }
