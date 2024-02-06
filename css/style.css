@@ -170,6 +170,12 @@ img{
     transition: all 0.3s ease;
     white-space: nowrap; /* ekran kichrayganda yozuv tagma-tag tushmaslik uchun*/
 }
+
+.sitenav-medium-font .sitenav-link{
+    font-size: 16px;
+    line-height: normal;
+}
+
 .sitenav-link:hover{
     border-bottom: 2px solid var(--accent-color-green);
     color: var(--accent-color-green);
@@ -417,6 +423,44 @@ img{
     outline: 2px dashed var(--light-brown);
 }
 
+/* FOOTER */
+.site-footer {
+    padding-top: 65px;
+    padding-bottom: 65px;
+    background-color: var(--light-brown);
+    background-image: url(../img/header-bg.jpg);
+}
+.site-footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.site-footer-logo-link {
+    display: flex;
+}
+.site-footer-logo-img {
+    flex-shrink: 0;
+    width: 235px;
+    height: 24px;
+    object-fit: contain;
+}
+.socials {
+    display: flex;
+    align-items: center;
+}
+.socials-item:not(:last-child) {
+    margin-right: 30px;
+}
+.socials-link {
+    display: flex;
+    color: #333;
+}
+.socials-link:hover{
+    color: #0a775f;
+}
+
+
+
 
 
 /* RETINA */
@@ -439,6 +483,9 @@ only screen and (                min-resolution: 2dppx) {
     }
     .how-it-works-inner{
         background-image: url(../img/green-bg@2x.jpg);
+    }
+    .site-footer {
+        background-image: url(../img/header-bg@2x.jpg);
     }
 
 }
