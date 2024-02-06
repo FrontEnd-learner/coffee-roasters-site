@@ -8,7 +8,7 @@
     --accent-color-light-brown-80: rgb(201, 155, 103, 0.8);
     --accent-color-light-brown-60: rgba(201, 155, 103, 0.6);
     --light-brown: #f3d7b7;
-    --light-green-bg: #f8f8f2;
+    --light-bg: #f8f8f2;
     --outline-color:var(--accent-color-green);
 }
 
@@ -348,6 +348,81 @@ img{
     color: var(--text-color);
 }
 
+/* HOW IT WORKS */
+.how-it-works-inner {
+    padding: 50px 30px;
+    background-image: url(../img/green-bg.jpg);
+    text-align: center;
+}
+.how-it-works-heading {
+    margin-bottom: 80px;
+    font-size: 50px;
+    line-height: 59px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+}
+.how-it-works-list {
+    display: flex;
+    margin-left: -20px;
+    margin-bottom: 60px;
+    text-align: left;
+    counter-reset: how-it-works;
+}
+.how-it-works-item {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% / 3 - 20px);
+    margin-left: 20px;
+    counter-increment: how-it-works ;
+}
+.how-it-works-item::before{
+    margin-bottom: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--light-bg);
+    border: 4px solid var(--light-brown);
+    content: "";
+}
+.how-it-works-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px 40px;
+    background-color: var(--light-bg);
+}
+.how-it-works-info::before{
+    margin-bottom: 45px;
+    color: var(--text-color);
+    font-size: 64px;
+    line-height: 75px;
+    text-align: right;
+    opacity: 0.8;
+    content: "0"counter(how-it-works);
+}
+.how-it-works-step-title {
+    width: 230px;
+    margin-bottom: 10px;
+    font-size: 40px;
+    line-height: normal;
+    color: var(--text-color);
+}
+.how-it-works-step-text {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
+}
+.how-it-works-cta:focus{
+    outline: 2px dashed var(--light-brown);
+}
+.how-it-works-action {
+}
+.button {
+}
+.button-brown {
+}
+
 
 
 /* RETINA */
@@ -367,6 +442,9 @@ only screen and (                min-resolution: 2dppx) {
     }
     .index-features-inner{
         background-image: url(../img/index-features-bg@2x.jpg);
+    }
+    .how-it-works-inner{
+        background-image: url(../img/green-bg@2x.jpg);
     }
 
 }
