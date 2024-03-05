@@ -61,6 +61,7 @@ body{
     display: flex;
     flex-direction: column;
     height: 100%;               /*sticky footer qilish uchun*/
+    overflow-x: hidden;
     font-family: "Roboto", "Arial", sans-serif;
     font-size: 16px;
     line-height: 1.75;
@@ -138,6 +139,7 @@ img{
     padding-left: 50px;
 }
 .site-header-logo-link {
+    /* flex-shrink 0 rasm ekran hajmi kichrayganda buzilmaslik */
     flex-shrink: 0;
     display: flex;
 }
@@ -215,7 +217,17 @@ img{
 .hero-info-text:not(:last-child){
     margin-bottom: 34px;
 }
+.hero-img-wrapper {
+    position: relative;
+}
+.hero-img-badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-45%, -45%);
+}
 .hero-img {
+    display: block;
     width: 710px;
     height: 596px;
     object-fit: cover;
@@ -236,6 +248,7 @@ img{
     margin-bottom: 20px;
 }
 .index-collection-inner{
+    position: relative;
     padding: 50px 145px;
     background-color: var(--light-green-bg);
     background-image: url(../img/index-collection-bg.jpg);
@@ -290,6 +303,22 @@ img{
 
 .index-collection-item:nth-child(even) .index-collection-info{
     padding-right: 117px;
+}
+
+.index-collection-leaves-left {
+    position: absolute;
+    top: 0;
+    left: -258px;
+}
+.index-collection-leaves-right-mix {
+    position: absolute;
+    top: 685px;
+    right: -328px;
+}
+.index-collection-leaves-left-light {
+    position: absolute;
+    left: -216px;
+    bottom: 170px;
 }
 
 /* INDEX FEATURES */
@@ -356,6 +385,7 @@ img{
 
 /* HOW IT WORKS */
 .how-it-works-inner {
+    position: relative;
     padding: 50px 30px;
     background-image: url(../img/green-bg.jpg);
     text-align: center;
@@ -377,6 +407,7 @@ img{
     counter-reset: how-it-works;
 }
 .how-it-works-item {
+    position: relative;
     display: flex;
     flex-direction: column;
     width: calc(100% / 3 - 20px);
@@ -390,6 +421,17 @@ img{
     background-color: var(--light-bg);
     border: 4px solid var(--light-brown);
     content: "";
+}
+.how-it-works-item:not(:last-child)::after{
+    position: absolute;
+    left: 80px;
+    top: 25px;
+    width: 500px;
+    height: 3px;
+    background-image: url(../img/broke-dashed.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: " ";
 }
 .how-it-works-info {
     flex-grow: 1;
@@ -421,6 +463,12 @@ img{
 }
 .how-it-works-cta:focus{
     outline: 2px dashed var(--light-brown);
+}
+
+.how-it-works-sticker{
+    position: absolute;
+    top: 41px;
+    right: 68px;
 }
 
 /* FOOTER */
