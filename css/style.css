@@ -138,18 +138,21 @@ img{
     padding-right: 50px;
     padding-left: 50px;
 }
-.site-header-logo-link {
+.site-header-logo-link, .site-footer-logo-link {
     /* flex-shrink 0 rasm ekran hajmi kichrayganda buzilmaslik */
     flex-shrink: 0;
     display: flex;
 }
-.site-header-logo-link:hover{
+.site-header-logo-link:hover,
+.site-footer-logo-link:hover{
     opacity: 0.8;
 }
-.site-header-logo-link:active{
+.site-header-logo-link:active,
+.site-footer-logo-link:active{
     opacity: 0.6;
 }
 .site-header-logo-img{
+    display: flex;
     width: 235px;
     height: 24px;
     object-fit: contain;
@@ -245,7 +248,8 @@ img{
 
 /* INDEX-COLLECTION */
 .index-collection{
-    margin-bottom: 20px;
+    margin: 20px;
+    margin-top: 0;
 }
 .index-collection-inner{
     position: relative;
@@ -329,6 +333,7 @@ img{
     padding: 50px 30px;
     background-image: url(../img/index-features-bg.jpg);
     background-repeat: no-repeat;
+    background-size: contain;
 }
 .index-features-heading {
     margin-bottom: 10px;
@@ -410,7 +415,7 @@ img{
     position: relative;
     display: flex;
     flex-direction: column;
-    width: calc(100% / 3 - 20px);
+    width: calc(100% / 3 - 10px);
     margin-left: 20px;
     counter-increment: how-it-works ;
 }
@@ -421,16 +426,18 @@ img{
     background-color: var(--light-bg);
     border: 4px solid var(--light-brown);
     content: "";
+    z-index: 10;
 }
 .how-it-works-item:not(:last-child)::after{
     position: absolute;
-    left: 80px;
+    left: 5px;
     top: 25px;
+    z-index: 1;
     width: 500px;
     height: 3px;
     background-image: url(../img/broke-dashed.svg);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     content: " ";
 }
 .how-it-works-info {
